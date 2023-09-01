@@ -101,7 +101,7 @@ A confusion matrix is a visual representation that reveals the performance of ou
 
 By examining the values in this matrix, we gain valuable insights into the strengths and weaknesses of our predictive model. It helps us understand where our model excels in accurate predictions and where it may require further fine-tuning. The confusion matrix is a critical tool in evaluating the model's precision, recall, and overall accuracy, enabling us to make data-informed decisions to improve the reliability of our predictions for power outage causes.
 
-<iframe src="assets/matrix.png" width=600 height=600 frameBorder=0></iframe>
+<iframe src="assets/matrix.png" frameBorder=0></iframe>
 
 In our evaluation of the predictive model for classifying the causes of power outages, we uncover valuable insights by examining the confusion matrix. This matrix provides a detailed breakdown of the model's performance, including its ability to correctly identify specific causes, such as "Severe Weather" and "Intentional Attack."
 
@@ -132,7 +132,7 @@ Breaking down the analysis, I established two hypotheses:
 
 The test statistic was defined as the difference in accuracy (over 24 hours minus within 24 hours), and I set the significance level at 0.01.
 
-<iframe src="assets/hist.png" width=600 height=400 frameBorder=0></iframe>
+<iframe src="assets/hist.png" frameBorder=0></iframe>
 
 Upon analysis, I determined the p-value to be 0.08. This p-value exceeds the alpha level, leading to the conclusion that I cannot reject the null hypothesis. In other words, my model's prediction accuracy remains consistent regardless of whether the outage duration exceeds 24 hours or remains within it. This result affirms that my model maintains fairness in predicting the cause categories for both types of outages.
 
