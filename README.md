@@ -11,6 +11,7 @@ Last edit: August 31, 2023
 4. [Final Model](#Final-Model)
    - [Choosing tree depth via GridSearchCV](#GridSearch)
 5. [Fairness Analysis](#Fairness-Analysis)
+   - [Is this difference in accuracy significant?](#accuracy)
 6. [Summary](#Summary)
 
 
@@ -97,11 +98,17 @@ In my fairness analysis, I sought to evaluate my model's performance based on wh
 | South Carolina | SERC          | Southeast        | normal             |   2004 |       1 |             0.3 |              3480 |          6.09 |   6.89937e+06 |           2208483 |      4210921 |          156906 | severe weather     | severe weather | Over          |
 
 
+### Is this difference in accuracy significant? <a name="accuracy"></a>
+
+Let’s run a permutation test to see if the difference in accuracy is significant. 
+
 Breaking down the analysis, I established two hypotheses:
 - **Null Hypothesis:** My model exhibits fairness. Its accuracy for durations exceeding 24 hours (1440 mins) and durations within 24 hours are comparable, with any discrepancies arising from random chance.
 - **Alternative Hypothesis:** My model demonstrates unfairness. Its accuracy for 24-hour (1440 mins) durations is lower than its accuracy for outages within 24 hours.
 
 The test statistic was defined as the difference in accuracy (over 24 hours minus within 24 hours), and I set the significance level at 0.01.
+
+<iframe src="assets/hist.png" width=800 height=600 frameBorder=0></iframe>
 
 Upon analysis, I determined the p-value to be 0.08. This p-value exceeds the alpha level, leading to the conclusion that I cannot reject the null hypothesis. In other words, my model's prediction accuracy remains consistent regardless of whether the outage duration exceeds 24 hours or remains within it. This result affirms that my model maintains fairness in predicting the cause categories for both types of outages.
 
