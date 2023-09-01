@@ -1,4 +1,5 @@
-by Michelle Tong (m1tong.edu)
+by [Michelle Tong](https://m1tong.github.io/) (m1tong.edu)
+Last edit: August 31, 2023
 
 ---
 
