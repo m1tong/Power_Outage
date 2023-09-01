@@ -1,6 +1,4 @@
 ---
-<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
 # What Happened To Our Electricity!?
 
 by [Michelle Tong](https://m1tong.github.io/) (m1tong.edu) 
@@ -8,10 +6,16 @@ by [Michelle Tong](https://m1tong.github.io/) (m1tong.edu)
 Last edit: August 31, 2023
 
 ## Table of Contents
-{: .no_toc .text-delta }
+1. [Example](#example)
+2. [Example2](#example2)
+3. [Third Example](#third-example)
+4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 
-1. TOC
-{:toc}
+
+## Example
+## Example2
+## Third Example
+## [Fourth Example](http://www.fourthexample.com) 
 
 ---
 
