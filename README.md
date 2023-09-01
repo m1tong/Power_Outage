@@ -1,3 +1,4 @@
+---
 # What Happened To Our Electricity!?
 
 by [Michelle Tong](https://m1tong.github.io/) (m1tong.edu) 
