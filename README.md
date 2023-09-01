@@ -1,3 +1,8 @@
+--
+title: Project 3
+description: Description of Project 3.
+--
+
 # What Happened To Our Electricity!?
 
 by [Michelle Tong](https://m1tong.github.io/) (m1tong.edu) 
@@ -99,7 +104,7 @@ Upon analysis, I determined the p-value to be 0.08. This p-value exceeds the alp
 
 --
 
-## Hypothesis Testing
+## Summary
 
 
 ---
