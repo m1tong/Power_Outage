@@ -97,6 +97,30 @@ In my fairness analysis, I sought to evaluate my model's performance based on wh
 | Louisiana      | SERC          | South            | normal             |   2008 |       9 |            -0.3 |             20416 |         10.46 |   7.16885e+06 |           2205675 |      4435586 |          206000 | severe weather     | severe weather | Over          |
 | South Carolina | SERC          | Southeast        | normal             |   2004 |       1 |             0.3 |              3480 |          6.09 |   6.89937e+06 |           2208483 |      4210921 |          156906 | severe weather     | severe weather | Over          |
 
+A confusion matrix is a visual representation that reveals the performance of our predictive model in classifying the causes of power outages. It breaks down the model's predictions into four key categories: true positives, true negatives, false positives, and false negatives. True positives represent the instances where the model accurately identified the actual cause of the outage. True negatives show the cases where the model correctly ruled out other potential causes. False positives indicate instances where the model wrongly predicted a cause that didn't exist, and false negatives depict situations where the model missed identifying the actual cause.
+
+By examining the values in this matrix, we gain valuable insights into the strengths and weaknesses of our predictive model. It helps us understand where our model excels in accurate predictions and where it may require further fine-tuning. The confusion matrix is a critical tool in evaluating the model's precision, recall, and overall accuracy, enabling us to make data-informed decisions to improve the reliability of our predictions for power outage causes.
+
+<iframe src="assets/matrix.png" width=600 height=600 frameBorder=0></iframe>
+
+In our evaluation of the predictive model for classifying the causes of power outages, we uncover valuable insights by examining the confusion matrix. This matrix provides a detailed breakdown of the model's performance, including its ability to correctly identify specific causes, such as "Severe Weather" and "Intentional Attack."
+
+1. **Severe Weather (True Positives - TP: 141):**
+   - "Severe Weather" emerges as the category with the highest true positives (141). This signifies that our model excels in accurately identifying power outages caused by severe weather conditions. It demonstrates the robustness of the model in recognizing this significant cause.
+
+2. **Intentional Attack (True Positives - TP: 94):**
+   - The second-highest true positives (94) correspond to the category "Intentional Attack." This suggests that our model is relatively effective at correctly identifying power outages resulting from intentional attacks. While not as high as "Severe Weather," this is still a commendable performance.
+
+However, it's crucial to acknowledge the instances of misclassification, as they shed light on areas where the model can benefit from further refinement:
+
+- **Severe Weather Misclassified as Intentional Attack (False Positives - FP: 17):**
+  - In 17 cases, the model incorrectly predicted that power outages attributed to severe weather were the result of intentional attacks. This highlights a potential challenge in distinguishing between these two causes in specific scenarios.
+
+- **Intentional Attack Misclassified as Severe Weather (False Negatives - FN: 17):**
+  - Similarly, in 17 instances, the model failed to correctly identify power outages caused by intentional attacks and instead classified them as severe weather-related outages. This reflects a sensitivity in detecting intentional attacks, which might require further investigation.
+
+In summary, while our predictive model demonstrates notable strengths in accurately identifying "Severe Weather" and "Intentional Attack" as causes of power outages, the misclassifications underscore the need for continuous improvement. Refining the model's ability to distinguish between these two categories could enhance its overall accuracy and reliability. The confusion matrix serves as a critical tool in pinpointing areas for model enhancement and guiding data-informed decisions to optimize our predictions for power outage causes.
+
 
 ### Is this difference in accuracy significant? <a name="accuracy"></a>
 
@@ -108,7 +132,7 @@ Breaking down the analysis, I established two hypotheses:
 
 The test statistic was defined as the difference in accuracy (over 24 hours minus within 24 hours), and I set the significance level at 0.01.
 
-<iframe src="assets/hist.png" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/hist.png" width=600 height=400 frameBorder=0></iframe>
 
 Upon analysis, I determined the p-value to be 0.08. This p-value exceeds the alpha level, leading to the conclusion that I cannot reject the null hypothesis. In other words, my model's prediction accuracy remains consistent regardless of whether the outage duration exceeds 24 hours or remains within it. This result affirms that my model maintains fairness in predicting the cause categories for both types of outages.
 
