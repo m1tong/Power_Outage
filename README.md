@@ -1,7 +1,7 @@
---
+---
 title: Project 3
 description: Description of Project 3.
---
+---
 
 # What Happened To Our Electricity!?
 
