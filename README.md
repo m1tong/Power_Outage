@@ -4,6 +4,12 @@ by [Michelle Tong](https://m1tong.github.io/) (m1tong.edu)
 
 Last edit: August 31, 2023
 
+## Table of Contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
 ---
 
 ## Introduction
