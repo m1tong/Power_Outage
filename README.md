@@ -4,21 +4,19 @@ by [Michelle Tong](https://m1tong.github.io/) (m1tong.edu)
 
 Last edit: August 31, 2023
 
-## Table of Contents
-1. [Example](#example)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
-4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+### Table of Contents
+1. [Introduction](#Introduction)
+2. [Cleaning and EDA](#Cleaning-and-EDA)
+3. [Baseline Model](#Baseline-Model)
+4. [Final Model](#Final-Model)
+   - [Choosing tree depth via GridSearchCV](#GridSearch)
+5. [Fairness Analysis](#Fairness-Analysis)
+6. [Summary](#Summary)
 
-
-## Example
-## Example2
-## Third Example
-## [Fourth Example](http://www.fourthexample.com) 
 
 ---
 
-## Introduction
+## Introduction <a name="Introduction"></a>
 
 Drawing insights from a comprehensive power outage dataset, the project embarks on an intriguing journey – one that melds data science with real-world impact. At its core lies a sophisticated **classification model** meticulously crafted to unveil the reasons behind power disruptions.
 
@@ -34,7 +32,7 @@ With every prediction, the model illuminates the shadows concealing the intricac
 
 ---
 
-## Cleaning and EDA
+## Cleaning and EDA <a name="Cleaning-and-EDA"></a>
 
 Guided by the need to enhance the dataset's relevance and applicability to my project, I undertook the task of data cleaning within Excel. This encompassed the removal of columns and rows that lacked a meaningful connection to the project's objectives. 
 
@@ -50,7 +48,7 @@ Now, let's take a look at the power outage dataset after this cleaning process. 
 
 ---
 
-## Baseline Model
+## Baseline Model <a name="Baseline-Model"></a>
 
 In crafting the foundational model, I chose the robust Random Forest algorithm as my guiding beacon. This sophisticated classifier amalgamates multiple decision trees, each rooted in distinct subsets of the dataset. By doing so, it illuminates the intricate landscape of power outages, predicting their underlying causes.
 
@@ -67,14 +65,14 @@ Indeed, my baseline model stands as a testament to its capability in confronting
 
 ---
 
-## Final Model
+## Final Model <a name="Final-Model"></a>
 
 In my final model, I incorporated both nominal and quantitative columns, encompassing attributes like anomaly level, duration, U.S. state population, and economic factors. These numeric categories bear a strong connection to the underlying causes of power outages. For instance, a higher anomaly level often results from international attacks or severe weather, contributing to the power outage's root causes.
 
 Once again, I employed a RandomForestClassifier with default parameters to predict the diverse cause categories behind power outages. Constructing a pipeline object, I transformed nominal data using OneHotEncoder and quantitative data using StandardScaler. This processed model was then fit to the estimator. After partitioning my dataset into training and test sets, I achieved an accuracy score of 80% for training and 71% for testing. This underscored the high accuracy of my prediction model. However, my aim was to further fine-tune the model to reach its pinnacle.
 
 
-###  Choosing tree depth via GridSearchCV
+###  Choosing tree depth via GridSearchCV <a name="GridSearch"></a>
 
 We arbitrarily chose max_depth=8 before, but it seems like that isn’t working well. Let’s perform
 a grid search to find the max_depth with the best generalization performance.
@@ -86,7 +84,7 @@ This observation may be attributed to the relatively large max depth value chose
 
 ---
 
-## Fairness Analysis
+## Fairness Analysis <a name="Fairness-Analysis"></a>
 
 In my fairness analysis, I sought to evaluate my model's performance based on whether the power outage duration exceeded 24 hours. This approach intrigued me, as I aimed to gauge how well my model identified major outage causes with varying durations. To achieve this, I introduced an additional column indicating whether an outage surpassed the 24-hour mark or fell within it.
 
@@ -112,7 +110,7 @@ Upon analysis, I determined the p-value to be 0.08. This p-value exceeds the alp
 ---
 
 
-## Summary
+## Summary <a name="Summary"></a>
 
 In the realm of data science, our journey through the landscape of power outages has been nothing short of illuminating. From the initial baseline model to the culmination of the final model and fairness analysis, we have delved into the intricacies of predicting the causes behind these disruptions. This venture has not only equipped us with a deeper understanding of the variables at play but has also showcased the power of data-driven insights in addressing real-world challenges.
 
